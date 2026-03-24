@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.DashboardController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="12" prefWidth="250"
+              style="-fx-background-color:#2C3E50; -fx-padding:22;"
+              alignment="TOP_CENTER">
+
+            <Label text="Project Manager"
+                   style="-fx-font-size:22; -fx-text-fill:white;" />
+
+            <!-- CREATE PROJECT -->
+            <HBox fx:id="hbCreateProject" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goCreateProject">
+                <ImageView fx:id="iconAdd" fitHeight="30" fitWidth="30"/>
+                <Label text="Create Project"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+            <!-- ASSIGN RESOURCES -->
+            <HBox fx:id="hbAssignResources" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goAssignResources">
+                <ImageView fx:id="iconResources" fitHeight="30" fitWidth="30"/>
+                <Label text="Assign Resources"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+              <!-- ASSIGN Workers -->
+            <HBox fx:id="hbAssignWorkers" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goAssignWorkers">
+                <ImageView fx:id="iconWorkers" fitHeight="30" fitWidth="30"/>
+                <Label text="Assign Workers"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+              <!-- Request resources -->
+            <HBox fx:id="hbRequestMaterial" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goRequestMaterial">
+                <ImageView fx:id="iconMaterial" fitHeight="30" fitWidth="30"/>
+                <Label text="Request Material"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+               <!-- Project phase -->
+            <HBox fx:id="hbProjectPhase" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goProjectPhase">
+                <ImageView fx:id="iconpp" fitHeight="30" fitWidth="30"/>
+                <Label text="Project Phase"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+               <!-- Manage inventory -->
+            <HBox fx:id="hbManageInventory" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goManageInventory">
+                <ImageView fx:id="iconmi" fitHeight="30" fitWidth="30"/>
+                <Label text="Manage Inventory"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+            <!-- Daily Log-->
+             <HBox fx:id="hbDailyLog" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goLog">
+                <ImageView fx:id="icondl" fitHeight="30" fitWidth="30"/>
+                <Label text="Daily Log Activity"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+            <!-- Document-->
+             <HBox fx:id="hbDocuments" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goDoc">
+                <ImageView fx:id="icond" fitHeight="30" fitWidth="30"/>
+                <Label text="Documents"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+             <!-- Budget Monitor-->
+             <HBox fx:id="hbBudget" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goBudget">
+                <ImageView fx:id="iconb" fitHeight="30" fitWidth="30"/>
+                <Label text="Budget Monitor"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+            <!-- Notification-->
+             <HBox fx:id="hbNotification" spacing="10" alignment="CENTER_LEFT" prefHeight="45"
+                  style="-fx-padding:10; -fx-background-radius:8;"
+                  onMouseClicked="#goNoti">
+                <ImageView fx:id="iconn" fitHeight="30" fitWidth="30"/>
+                <Label text="Notification"
+                       style="-fx-text-fill:white; -fx-font-size:16;" />
+            </HBox>
+
+        </VBox>
+    </left>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox style="-fx-background-color:white; -fx-border-color:#e8eaed;" alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="Logged in as:" style="-fx-font-size:14px; -fx-text-fill:#555;" />
+            <Label fx:id="lblUsername"  style="-fx-font-size:14px; -fx-font-weight:bold; -fx-text-fill:#333;" />
+        </HBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="false" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="20" style="-fx-background-color: #f5f6fa; -fx-padding:20;">
+
+                <!-- HEADER -->
+                <HBox style="-fx-background-color:white; -fx-border-color:#e8eaed;" alignment="CENTER_LEFT">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    <Label text="Project Manager Dashboard"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <!-- STAT CARDS -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <padding><Insets top="10" left="20" right="20" bottom="10"/></padding>
+
+                    <VBox fx:id="cardTotal" prefWidth="180" prefHeight="100"
+                          alignment="CENTER"
+                          spacing="5"
+                          style="-fx-background-color:white; -fx-border-color:#dcdcdc; -fx-background-radius:12; -fx-border-radius:12; -fx-padding:10;" />
+
+                    <VBox fx:id="cardActive" prefWidth="180" prefHeight="100"
+                          alignment="CENTER"
+                          spacing="5"
+                          style="-fx-background-color:white; -fx-border-color:#dcdcdc; -fx-background-radius:12; -fx-border-radius:12; -fx-padding:10;" />
+
+                    <VBox fx:id="cardPending" prefWidth="180" prefHeight="100"
+                          alignment="CENTER"
+                          spacing="5"
+                          style="-fx-background-color:white; -fx-border-color:#dcdcdc; -fx-background-radius:12; -fx-border-radius:12; -fx-padding:10;" />
+
+                    <VBox fx:id="cardBudget" prefWidth="180" prefHeight="100"
+                          alignment="CENTER"
+                          spacing="5"
+                          style="-fx-background-color:white; -fx-border-color:#dcdcdc; -fx-background-radius:12; -fx-border-radius:12; -fx-padding:10;" />
+                </HBox>
+
+                <!-- CHARTS -->
+                <HBox spacing="20">
+                    <padding><Insets top="10" left="20" right="20" bottom="20"/></padding>
+
+                    <BarChart fx:id="progressChart" title="Project Progress"
+                              prefWidth="600" prefHeight="350">
+                        <xAxis><CategoryAxis label="Project"/></xAxis>
+                        <yAxis><NumberAxis label="Completion %"/></yAxis>
+                    </BarChart>
+
+                    <PieChart fx:id="budgetPie" title="Budget Distribution"
+                              prefWidth="350" prefHeight="350"/>
+                </HBox>
+                
+
+                <!-- QUICK ACTION & PROJECTS -->
+                <VBox spacing="20" style="-fx-padding:20;">
+
+                    <!-- Quick Action Bar -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button text="Logout" fx:id="btnQuickLogout" onAction="#logout"
+                                style="-fx-background-color:#E74C3C; -fx-text-fill:white;"/>
+                        <Button text="Notifications" fx:id="btnNotifications" onAction="#goNoti"
+                               style="-fx-background-color:#3498DB; -fx-text-fill:white;"/> 
+                    </HBox>
+
+                    <!-- Projects & Milestones -->
+                    <VBox fx:id="projectsBox" spacing="15" style="-fx-padding:10;">
+                        <Label text="Projects &amp; Milestones" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+                        <!-- Dynamic project cards added in controller -->
+                    </VBox>
+
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
