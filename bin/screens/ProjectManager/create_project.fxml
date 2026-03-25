@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.CreateProjectController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15 5 15;"/>
+            <Label text="Create New Project" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color:#f5f6fa;">
+            <VBox spacing="20" style="-fx-padding:20; -fx-background-color:#f5f6fa;">
+
+                <!-- Project Details -->
+                <VBox spacing="10" style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-radius:12; -fx-border-color:#dcdcdc;">
+                    <Label text="Project Details" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+                    <HBox spacing="10">
+                        <Label text="Project Name:" prefWidth="120"/>
+                        <TextField fx:id="txtProjectName" prefWidth="300"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Client:" prefWidth="120"/>
+                        <TextField fx:id="txtClient" prefWidth="300"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Location:" prefWidth="120"/>
+                        <TextField fx:id="txtLocation" prefWidth="300"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Start Date:" prefWidth="120"/>
+                        <DatePicker fx:id="dpStartDate"/>
+                        <Label text="End Date:" prefWidth="80"/>
+                        <DatePicker fx:id="dpEndDate"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Estimated Budget:" prefWidth="120"/>
+                        <TextField fx:id="txtBudget" prefWidth="300"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Team Assignment -->
+                <VBox spacing="10" style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-radius:12; -fx-border-color:#dcdcdc;">
+                    <Label text="Team Assignment" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                    <HBox spacing="10">
+                        <Label text="Finance Officer:" prefWidth="150"/>
+                        <ComboBox fx:id="cmbFinanceOfficer" prefWidth="200"/>
+                    </HBox>
+
+                    <HBox spacing="10">
+                        <Label text="Procurement Officer:" prefWidth="150"/>
+                        <ComboBox fx:id="cmbProcurementOfficer" prefWidth="200"/>
+                    </HBox>
+
+                    <HBox spacing="10">
+                        <Label text="Inventory Manager:" prefWidth="150"/>
+                        <ComboBox fx:id="cmbInventoryManager" prefWidth="200"/>
+                    </HBox>
+
+                    <Label text="Other Team Members:"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="txtTeamMember" promptText="Member Name" prefWidth="150"/>
+                        <ComboBox fx:id="cmbRole" prefWidth="150" promptText="Select Role"/>
+                        <Button fx:id="btnAddMember" text="Add Member"
+                                style="-fx-background-color:#4CAF50; -fx-text-fill:white; -fx-font-weight:bold;"/>
+                    </HBox>
+
+                    <ListView fx:id="lstTeamMembers" prefHeight="120"/>
+                </VBox>
+
+                <!-- Project Description -->
+                <VBox spacing="10" style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-radius:12; -fx-border-color:#dcdcdc;">
+                    <Label text="Project Description" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+                    <TextArea fx:id="txtDescription" prefRowCount="5" wrapText="true"/>
+                </VBox>
+
+                <!-- Submit Button -->
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Create Project" fx:id="btnCreateProject" onAction="#createProject"
+                            style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:10 20 10 20;"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

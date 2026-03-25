@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane fx:controller="controllers.FinanceOfficer.SceneController" xmlns:fx="http://javafx.com/fxml">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox spacing="10" style="-fx-padding:10; -fx-background-color: #f5f5f5;">
+            <Button text="Finance Dashboard" fx:id="financeBtn" onAction="#switchScene"/>
+            <Button text="Other Page" fx:id="otherBtn" onAction="#switchScene"/>
+        </VBox>
+    </left>
+
+    <!-- Main content area -->
+    <center>
+        <StackPane fx:id="contentArea"/>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ProjectManager.BudgetDashboardController"
+            fitToWidth="true"
+            fitToHeight="true">
+    <content>
+    <VBox spacing="20" alignment="TOP_LEFT" prefWidth="1200" >
+
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10; -fx-background-color:#34495E;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15 5 15;"/>
+            <Label text="Assign Tasks to Workers" style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+        </HBox>
+    
+    
+        <!-- Header -->
+        <VBox spacing="2">
+            <Label text="Budget Monitor" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+            <Label text="Overview of budget, expenses, and utilization" style="-fx-text-fill: gray;" />
+        </VBox>
+
+        <!-- Project Selection -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Select Project:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="projectDropdown" prefWidth="200"/>
+        </HBox>
+
+        
+
+        <!-- Summary Cards -->
+        <GridPane hgap="20" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33"/>
+                <ColumnConstraints percentWidth="33"/>
+                <ColumnConstraints percentWidth="33"/>
+            </columnConstraints>
+
+            <!-- Total Budget -->
+            <VBox spacing="5" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #cccccc, 5, 0, 0, 1);">
+                <Label text="Total Budget" style="-fx-font-weight: bold; -fx-font-size: 12;" />
+                <Label fx:id="totalBudgetLabel" text="0" style="-fx-font-size: 20;" />
+            </VBox>
+
+            <!-- Total Spent -->
+            <VBox GridPane.columnIndex="1" spacing="5" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #cccccc, 5, 0, 0, 1);">
+                <Label text="Total Spent" style="-fx-font-weight: bold; -fx-font-size: 12;" />
+                <Label fx:id="totalSpentLabel" text="0" style="-fx-font-size: 20;" />
+            </VBox>
+
+            <!-- Remaining -->
+            <VBox GridPane.columnIndex="2" spacing="5" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #cccccc, 5, 0, 0, 1);">
+                <Label text="Remaining" style="-fx-font-weight: bold; -fx-font-size: 12;" />
+                <Label fx:id="totalRemainingLabel" text="0" style="-fx-font-size: 20;" />
+            </VBox>
+        </GridPane>
+
+      
+
+        <!-- Budget Table -->
+        <VBox VBox.vgrow="ALWAYS">
+        <TableView fx:id="budgetTable" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="colProject" text="Project" prefWidth="150"/>
+                <TableColumn fx:id="colBudget" text="Budget ($)" prefWidth="100"/>
+                <TableColumn fx:id="colSpent" text="Spent ($)" prefWidth="100"/>
+                <TableColumn fx:id="colRemaining" text="Remaining ($)" prefWidth="100"/>
+                <TableColumn fx:id="colUtilization" text="Utilization (%)" prefWidth="120"/>
+            </columns>
+        </TableView>
+        </VBox>
+
+       
+
+        <!-- Charts Section -->
+        <GridPane hgap="20">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+            <!-- Budget vs Spent Chart -->
+            <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #cccccc, 5, 0, 0, 1);">
+                <Label text="Budget vs Spent" style="-fx-font-weight: bold; -fx-font-size: 16;" />
+                <BarChart fx:id="budgetBarChart">
+                    <xAxis>
+                        <CategoryAxis label="Projects"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Amount"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+
+            <!-- Expense Distribution Chart -->
+            <VBox GridPane.columnIndex="1" spacing="8" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #cccccc, 5, 0, 0, 1);">
+                <Label text="Expense Distribution" style="-fx-font-weight: bold; -fx-font-size: 16;" />
+                <PieChart fx:id="expensePieChart"/>
+            </VBox>
+        </GridPane>
+
+    </VBox>
+    </content>
+</ScrollPane>

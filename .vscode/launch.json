@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "model.ProjectManager.App",
+            "projectName": "New_41d9db43"
+        },
+        {
+            "type": "java",
+            "name": "DashboardView",
+            "request": "launch",
+            "mainClass": "DashboardView",
+            "projectName": "New_41d9db43"
+        },
+        {
+            "type": "java",
+            "name": "TestDB",
+            "request": "launch",
+            "mainClass": "TestDB",
+            "projectName": "New_41d9db43"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "New_41d9db43"
+        },
+        {
+            "type": "java",
+            "name": "Launch JavaFX App",
+            "request": "launch",
+            "mainClass": "model.ProjectManager.App",
+            "vmArgs": "--module-path C:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib --add-modules javafx.controls,javafx.fxml",
+            "console": "integratedTerminal"
+        }
+    ]
+}

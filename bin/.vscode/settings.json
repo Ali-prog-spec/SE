@@ -1,0 +1,29 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.base.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.controls.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.fxml.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.graphics.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.media.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.swing.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.web.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\jdk.jsobject.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\jfx.incubator.input.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\jfx.incubator.richtext.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.base.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.controls.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.fxml.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.graphics.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.media.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.swing.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx.web.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-21.0.10_windows-x64_bin-sdk\\javafx-sdk-21.0.10\\lib\\javafx-swt.jar"
+        ],
+        "exclude": [
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-17.0.17_windows-x64_bin-sdk\\javafx-sdk-17.0.17\\lib\\javafx-swt.jar",
+            "c:\\Users\\KENKINIKI\\Documents\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx-swt.jar"
+        ]
+    }
+}
