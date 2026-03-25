@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controllers.ProjectManager.SignupController"
+           styleClass="root-bg">
+
+    <VBox alignment="CENTER">
+
+    
+
+        <VBox spacing="25"
+              alignment="CENTER"
+              styleClass="login-card">
+
+            <!-- Icon -->
+            <VBox alignment="CENTER">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="@icon.png"/>
+                    </image>
+                </ImageView>
+            </VBox>
+
+
+            <!-- Titles -->
+            <Label text="Construction Management"
+                   styleClass="title-text"/>
+            <Label text="Information System (CMIS)"
+                   styleClass="subtitle-text"/>
+
+                   
+
+            <!-- Form -->
+            <VBox spacing="15" maxWidth="420">
+
+
+                <!-- Full Name -->
+                <VBox spacing="5">
+                    <Label text="Full Name" styleClass="field-label"/>
+                    <TextField fx:id="txtFullName"
+                               promptText="Enter your full name"
+                               styleClass="input-field"/>
+                </VBox>
+
+                <!-- Email -->
+                <VBox spacing="5">
+                    <Label text="Email" styleClass="field-label"/>
+                    <TextField fx:id="txtEmail"
+                               promptText="Enter your email"
+                               styleClass="input-field"/>
+                </VBox>
+
+                <!-- Password -->
+                <VBox spacing="5">
+                    <Label text="Password" styleClass="field-label"/>
+                    <PasswordField fx:id="txtPassword"
+                                   promptText="Enter your password"
+                                   styleClass="input-field"/>
+                </VBox>
+
+                <!-- Confirm Password -->
+                <VBox spacing="5">
+                    <Label text="Confirm Password" styleClass="field-label"/>
+                    <PasswordField fx:id="txtConfirmPassword"
+                                   promptText="Re-enter your password"
+                                   styleClass="input-field"/>
+                </VBox>
+
+                <!-- Role -->
+                <VBox spacing="5">
+                    <Label text="Role" styleClass="field-label"/>
+                    <ComboBox fx:id="roleCombo"
+                              promptText="Select your role"
+                              styleClass="input-field"/>
+                </VBox>
+
+                <!-- Signup BTN -->
+                <Button fx:id="signupButton"
+                        text="Sign Up"
+                        onAction="#handleSignup"
+                        styleClass="login-btn"/>
+
+                <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-padding:5 15;"/>
+
+
+                <!-- ERROR LABEL -->
+                <Label fx:id="errorLabel"
+                       textFill="red"
+                       wrapText="true"
+                       visible="false"
+                       styleClass="error-label"/>
+            </VBox>
+
+            <!-- Demo Info -->
+            <HBox alignment="CENTER" styleClass="demo-box">
+                <Label text="Demo Mode: Enter your details to sign up and select your role."
+                       wrapText="true"
+                       styleClass="demo-text"/>
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</StackPane>

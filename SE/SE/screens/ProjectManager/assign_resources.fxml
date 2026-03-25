@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.AssignResourcesController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding:15;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-padding:5 15;"/>
+            <Label text="Assign Resources to Project"
+                   style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-padding:10;">
+            <VBox spacing="20" style="-fx-padding:20;">
+
+                <!-- Select Project Card -->
+                <VBox spacing="10"
+                      style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-color:#dcdcdc;">
+                    <Label text="Select Project" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                    <ComboBox fx:id="cmbProject" prefWidth="250" promptText="Choose project"/>
+                </VBox>
+
+               <!-- Select Resource Card -->
+<VBox spacing="10"
+      style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-color:#dcdcdc;">
+    
+    <Label text="Resources" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+    <!-- ComboBox on its own line -->
+    <ComboBox fx:id="cmbResource" prefWidth="250" promptText="Select resource"/>
+
+    <!-- Assign button only -->
+    <HBox spacing="10">
+        <Button text="Assign" fx:id="btnAssign" onAction="#assignResource"
+                style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-padding:5 15;"/>
+    </HBox>
+</VBox>
+
+
+
+                <!-- Assigned List -->
+                <VBox spacing="10"
+                      style="-fx-background-color:white; -fx-padding:20; -fx-background-radius:12; -fx-border-color:#dcdcdc;">
+                    <Label text="Assigned Resources" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                    <ListView fx:id="lstAssigned" prefHeight="200"/>
+                </VBox>
+
+            </VBox>
+
+            
+        </ScrollPane>
+    </center>
+
+</BorderPane>
