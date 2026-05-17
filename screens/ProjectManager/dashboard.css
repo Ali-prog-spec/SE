@@ -1,0 +1,24 @@
+.card {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-pref-width: 250;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #dcdcdc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.card Label:first-child {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.card Label:nth-child(2) {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555;
+}
+
+.card Label:nth-child(3) {
+    -fx-font-size: 12px;
+    -fx-text-fill: #999;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ProjectManager.DocumentController"
+      style="-fx-padding:20; -fx-background-color:#f5f5f5;">
+
+       <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color: orange; -fx-text-fill: white;"/>
+
+
+    <Label text="Upload Project Document"
+           style="-fx-font-size:22px; -fx-font-weight:bold;" />
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Select Project:"/>
+            <ComboBox fx:id="cmbProjects" prefWidth="300"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Select Category:"/>
+            <ComboBox fx:id="cmbCategory" prefWidth="250"/>
+        </VBox>
+    </HBox>
+
+    <Button fx:id="btnChooseFile" text="Choose File"
+            style="-fx-background-color:#2196F3; -fx-text-fill:white; -fx-padding:8 20;"
+            onAction="#chooseFile" />
+
+    <Label fx:id="lblSelectedFile"
+           text="No file selected"
+           style="-fx-text-fill:gray;" />
+
+    <Button fx:id="btnUpload" text="Upload Document"
+            style="-fx-background-color:#4CAF50; -fx-text-fill:white; -fx-padding:8 20;"
+            onAction="#uploadDocument" />
+
+    <Separator/>
+
+    <Label text="Uploaded Documents:"
+           style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+    <ScrollPane fitToWidth="true" prefHeight="400">
+        <VBox fx:id="vboxDocuments" spacing="10" />
+    </ScrollPane>
+
+</VBox>

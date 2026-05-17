@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ProjectManager.NotificationsController"
+      spacing="15"
+      prefWidth="1200"
+      prefHeight="700"
+      style="-fx-padding:20; -fx-background-color:#f5f6fa;">
+
+    <!-- Back Button Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10 0 10 0;">
+        <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15;"/>
+        <Label text="Notifications"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+    </HBox>
+
+    <!-- Refresh Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="All Alerts"
+               style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+        <Button text="Refresh" onAction="#loadNotifications"
+                style="-fx-background-color:#3498db; -fx-text-fill:white;"/>
+    </HBox>
+
+    <!-- Scrollable Notifications List -->
+    <ScrollPane fx:id="scrollPane"
+                fitToWidth="true"
+                prefWidth="1180"
+                prefHeight="600"
+                style="-fx-background-color:transparent;">
+        
+        <VBox fx:id="vboxNotifications"
+              spacing="10"
+              prefWidth="1180"
+              style="-fx-padding:10;"/>
+    </ScrollPane>
+
+</VBox>

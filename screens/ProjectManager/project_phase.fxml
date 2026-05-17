@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.ProjectPhaseController"
+            prefWidth="1200" prefHeight="800">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15 5 15;"/>
+            <Label text="Project Phases" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            <ComboBox fx:id="cmbProjects" prefWidth="250"/>
+            <Button text="Add Phase" fx:id="btnAddPhase" onAction="#addPhase"
+                    style="-fx-background-color:#4CAF50; -fx-text-fill:white; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true"
+                    prefWidth="1150" prefHeight="700"
+                    style="-fx-background-color:transparent;">
+            <VBox fx:id="vboxPhases" spacing="10"
+                  prefWidth="1150" prefHeight="700"
+                  style="-fx-padding:10;" VBox.vgrow="ALWAYS"/>
+        </ScrollPane>
+    </center>
+</BorderPane>

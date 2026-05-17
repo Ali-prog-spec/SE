@@ -1,0 +1,93 @@
+/* Root background gradient */
+.root-bg {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #e9f0ff, #f3f7ff);
+}
+
+/* Login card container with border */
+.login-card {
+    -fx-background-color: white;
+    -fx-padding: 50 60 50 60;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: #d0d7e5;  /* subtle border color */
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 20, 0.2, 0, 4);
+}
+
+/* Title and subtitle text */
+.title-text {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #080820;
+}
+
+.subtitle-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #777777;
+}
+
+/* Labels for input fields */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444444;
+}
+
+/* Text fields and combo box */
+.input-field {
+    -fx-background-radius: 10;
+    -fx-background-color: #f2f3f8;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.input-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #4c7bff;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(76,123,255,0.3), 10, 0.1, 0, 2);
+}
+
+/* Login button */
+.login-btn {
+    -fx-background-color: #080820;
+    -fx-text-fill: white;
+    -fx-padding: 12;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover {
+    -fx-background-color: #0d0d30;
+}
+
+/* Forgot password link */
+.forgot-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2b67ff;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Demo information box */
+.demo-box {
+    -fx-background-color: #eaf0ff;
+    -fx-padding: 15;
+    -fx-background-radius: 10;
+}
+
+.demo-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #5060b8;
+}
+
+/* Error label */
+.error-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.ProjectManager.DailyLogController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- Top section: Back button + Title -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Back Button -->
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color: orange; -fx-text-fill: white;"/>
+
+            <!-- Title -->
+            <Label text="Daily Project Activity Log"
+                   style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <!-- Center: Form and Logs -->
+    <center>
+        <VBox spacing="15" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <!-- Project selection -->
+            <HBox spacing="10">
+                <Label text="Select Project:"/>
+                <ComboBox fx:id="cmbProjects" prefWidth="300"/>
+            </HBox>
+
+            <!-- Description input -->
+            <Label text="Description:"/>
+            <TextArea fx:id="txtDescription" prefHeight="100" wrapText="true"/>
+
+            <!-- Buttons -->
+            <HBox spacing="10">
+                <Button text="Save Log" fx:id="btnSave" onAction="#saveLog"
+                        style="-fx-background-color:#4CAF50; -fx-text-fill:white;"/>
+                <Button text="Export CSV" fx:id="btnExportCSV" onAction="#exportCSV"
+                        style="-fx-background-color:#2196F3; -fx-text-fill:white;"/>
+            </HBox>
+
+            <!-- Logs list with scroll -->
+            <Label text="Today's Logs:"/>
+            <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="300">
+                <content>
+                    <ListView fx:id="listLogs" prefHeight="300"/>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ProcurementOfficer.DashboardController"
+            fx:id="rootPane">
+
+    <!-- ===========================
+          LEFT SIDEBAR
+    ============================ -->
+    <left>
+        <VBox spacing="10" styleClass="sidebar" prefWidth="200">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <Label text="           MENU" styleClass="sidebar-title" alignment="CENTER"/>
+
+            <Button fx:id="btnSidebarDashboard" text="Dashboard" styleClass="sidebar-button" prefWidth="180"/>
+            <Button fx:id="btnSidebarReview" text="Material Requests" styleClass="sidebar-button" prefWidth="180"/>
+            <Button fx:id="btnSidebarAlerts" text="Alerts" styleClass="sidebar-button" prefWidth="180"/>
+        </VBox>
+    </left>
+
+    <!-- ===========================
+          TOP BAR
+    ============================ -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_RIGHT" styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <!-- App Title -->
+            <Label text="Procurement Officer" styleClass="top-bar-title"/>
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Notification Icon -->
+            <StackPane fx:id="notificationPane" styleClass="notification-icon">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/assets/bell_icon.png"/>
+                    </image>
+                </ImageView>
+                <Circle fx:id="notificationDot" radius="5" fill="red" translateX="10" translateY="-10" visible="true"/>
+            </StackPane>
+
+            <!-- Account Menu -->
+            <MenuButton fx:id="accountMenuButton" text="Account" styleClass="account-menu">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true">
+                        <image>
+                            <Image url="@/assets/user_icon.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem fx:id="logoutMenuItem" text="Logout"/>
+                </items>
+            </MenuButton>
+        </HBox>
+    </top>
+
+    <!-- ===========================
+          CENTER - COLORFUL DASHBOARD CONTENT
+    ============================ -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: #f0f4f8;">
+            <VBox spacing="25">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <!-- SUMMARY CARDS -->
+                <GridPane hgap="20" vgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                    </columnConstraints>
+
+                    <!-- Pending -->
+                    <VBox style="-fx-background-color: #ffe6e6; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15),5,0,0,2);">
+                        <Label text="Pending Requests" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblPending" style="-fx-font-size: 26px; -fx-text-fill: #d32f2f; -fx-font-weight: bold;"/>
+                        <Label text="Awaiting approval" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    </VBox>
+
+                    <!-- Approved -->
+                    <VBox GridPane.columnIndex="1" style="-fx-background-color: #e6f4ff; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15),5,0,0,2);">
+                        <Label text="Approved (Last 7 Days)" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblApproved" style="-fx-font-size: 26px; -fx-text-fill: #1976d2; -fx-font-weight: bold;"/>
+                        <Label text="Successfully processed" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    </VBox>
+
+                    <!-- Rejected -->
+                    <VBox GridPane.columnIndex="2" style="-fx-background-color: #fff4e6; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15),5,0,0,2);">
+                        <Label text="Rejected (Last 7 Days)" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblRejected" style="-fx-font-size: 26px; -fx-text-fill: #f57c00; -fx-font-weight: bold;"/>
+                        <Label text="Declined requests" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    </VBox>
+
+                    <!-- Total -->
+                    <VBox GridPane.columnIndex="3" style="-fx-background-color: #e6ffe6; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15),5,0,0,2);">
+                        <Label text="Total Requests" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblTotal" style="-fx-font-size: 26px; -fx-text-fill: #388e3c; -fx-font-weight: bold;"/>
+                        <Label text="This week" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Quick Actions -->
+                <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10),5,0,0,2);">
+                    <Label text="Quick Actions" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Procurement operations" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    <HBox spacing="10">
+                        <Button text="Review Requests" fx:id="btnReviewRequests" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Pending Requests Table -->
+                <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10),5,0,0,2);">
+                    <Label text="Pending Requests" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Material and equipment requests awaiting approval" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    <TableView fx:id="tblPending" style="-fx-background-color: #f9f9f9; -fx-border-radius: 8; -fx-background-radius: 8;">
+                        <columns>
+                            <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                            <TableColumn fx:id="colItem" text="Item" prefWidth="180"/>
+                            <TableColumn fx:id="colProject" text="Project" prefWidth="150"/>
+                            <TableColumn fx:id="colRequester" text="Requester" prefWidth="120"/>
+                            <TableColumn fx:id="colQuantity" text="Quantity" prefWidth="100"/>
+                            <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+                            <TableColumn fx:id="colActions" text="Actions" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                    <Button text="View All Requests" fx:id="btnViewAllPending" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                </VBox>
+
+                <!-- Recent Activity -->
+                <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10),5,0,0,2);">
+                    <Label text="Recent Activity" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Recently processed requests" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    <VBox spacing="8" fx:id="recentActivityContainer"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

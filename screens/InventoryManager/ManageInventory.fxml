@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.InventoryManager.ManageInventoryController">
+
+    <!-- TOP HEADER -->
+    <top>
+        <VBox spacing="10" style="-fx-background-color: linear-gradient(to right, #2980b9, #3498db); -fx-padding: 15;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <!-- Back Button -->
+                <!-- <Button fx:id="btnBack" text="← Back"
+                        style="-fx-background-color: white; -fx-text-fill: #2980b9; -fx-font-weight: bold; -fx-background-radius: 10;"
+                        onMouseEntered="#hoverIn" onMouseExited="#hoverOut"/> -->
+                
+                <!-- Titles -->
+                <VBox>
+                    <Label text="Manage Inventory" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Add, update, or remove inventory items" style="-fx-text-fill: #ecf0f1;"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <!-- Add Item Button -->
+                <Button fx:id="btnAddItem" text="+ Add Item" 
+                        style="-fx-background-color: #1d4ed8; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"
+                        onMouseEntered="#hoverIn" onMouseExited="#hoverOut"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 15;">
+            
+            <!-- Search Bar -->
+            <HBox spacing="10">
+                <TextField fx:id="searchField" promptText="Search inventory..."
+                           style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #3498db; -fx-padding: 5 10;"/>
+            </HBox>
+
+            <!-- Inventory Table -->
+            <TableView fx:id="inventoryTable" prefHeight="500"
+                       style="-fx-table-cell-border-color: transparent; -fx-selection-bar: #3498db; -fx-selection-bar-non-focused: #2980b9;">
+                <columns>
+                    <TableColumn fx:id="colName" text="Item Name" prefWidth="200"/>
+                    <TableColumn fx:id="colCategory" text="Category" prefWidth="100"/>
+                    <TableColumn fx:id="colQuantity" text="Quantity" prefWidth="100"/>
+                    <TableColumn fx:id="colMinStock" text="Min Stock" prefWidth="100"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                    <TableColumn fx:id="colActions" text="Actions" prefWidth="160"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

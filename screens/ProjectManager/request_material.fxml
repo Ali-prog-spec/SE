@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="controllers.ProjectManager.RequestMaterialController"
+      spacing="10" alignment="TOP_CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      prefWidth="800" prefHeight="600">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+ <HBox spacing="20" alignment="CENTER_LEFT">
+    <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-padding:5 15;"/>
+ </HBox>
+    <Label text="Request Materials" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label text="Project:"/>
+        <ComboBox fx:id="cmbProjects" prefWidth="200"/>
+        <Label text="Inventory Manager:"/>
+        <ComboBox fx:id="cmbManagers" prefWidth="200"/>
+    </HBox>
+
+    <!-- ScrollPane wraps the VBox to allow scrolling -->
+    <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="400">
+        <VBox fx:id="vboxMaterials" spacing="10" fillWidth="true"/>
+    </ScrollPane>
+
+    
+</VBox>

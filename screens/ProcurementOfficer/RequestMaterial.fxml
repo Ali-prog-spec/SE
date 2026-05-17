@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProcurementOfficer.RequestMaterialController"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <!-- Breadcrumb -->
+        <HBox spacing="5" style="-fx-padding: 15;">
+            <Button text="Dashboard" onAction="#handleBack" styleClass="breadcrumb-button"/>
+            <Label text="/" style="-fx-text-fill: #888;"/>
+            <Label text="Request Material" style="-fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            
+            <!-- Pending Requests Table Card -->
+            <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 20; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),5,0,0,2);">
+                <Label text="Pending Material / Equipment Requests" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <Label text="Review and take action on requests" style="-fx-text-fill: gray;"/>
+
+                <TableView fx:id="tblRequests" style="-fx-background-radius: 8; -fx-border-radius: 8;">
+                    <columns>
+                        <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                        <TableColumn fx:id="colItem" text="Item" prefWidth="180"/>
+                        <TableColumn fx:id="colProject" text="Project" prefWidth="150"/>
+                        <TableColumn fx:id="colRequester" text="Requester" prefWidth="120"/>
+                        <TableColumn fx:id="colQuantity" text="Quantity" prefWidth="100"/>
+                        <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+                        <TableColumn fx:id="colActions" text="Actions" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

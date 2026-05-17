@@ -1,0 +1,103 @@
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20 10 20 10;
+}
+
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #3d566e;
+}
+
+/* Top bar */
+.top-bar {
+    -fx-background-color: linear-gradient(to right, #2980b9, #3498db);
+    -fx-padding: 10 20 10 20;
+    -fx-alignment: center-right;
+}
+
+.top-bar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Notification icon */
+.notification-icon:hover {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* Account Menu */
+.account-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 5 15 5 15;
+    -fx-font-weight: bold;
+}
+
+.account-menu:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2980b9;
+}
+
+.table-view .column-header, .table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Buttons */
+.button-submit {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+
+.button-submit:hover {
+    -fx-background-color: #1565c0;
+}
+
+.button-cancel {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #555;
+    -fx-background-radius: 8;
+}
+
+.button-cancel:hover {
+    -fx-background-color: #d5d5d5;
+}
+
+/* Breadcrumb */
+.breadcrumb-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1976d2;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+}
+
+.breadcrumb-button:hover {
+    -fx-underline: true;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.ManageInventoryController"
+            prefWidth="1200" prefHeight="700"
+            style="-fx-background-color:#f5f6fa;">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT"
+              style="-fx-padding:10; -fx-background-color:#34495E;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15;"/>
+            <Label text="Manage Inventory"
+                   style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox spacing="20" style="-fx-padding:20;">
+            <Button text="Add New Resource" fx:id="btnAddResource" onAction="#openAddResourceDialog"
+                    style="-fx-background-color:#27ae60; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:8 20;"/>
+
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color:transparent;">
+                <VBox fx:id="vboxResources" spacing="10" style="-fx-padding:10;"/>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

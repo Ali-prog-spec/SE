@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Circle?>
+
+
+<BorderPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.InventoryManager.DashboardController">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox spacing="10" styleClass="sidebar" prefWidth="200">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <Label text="           MENU" styleClass="sidebar-title" alignment="CENTER"/>
+
+            <Button fx:id="btnSidebarDashboard" text="Dashboard" styleClass="sidebar-button" prefWidth="180"/>
+            <Button fx:id="btnSidebarManage" text="Manage Inventory" styleClass="sidebar-button" prefWidth="180"/>
+            <Button fx:id="btnSidebarAlerts" text="Alerts" styleClass="sidebar-button" prefWidth="180"/>
+        </VBox>
+    </left>
+
+
+    <!-- Top bar -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_RIGHT" styleClass="top-bar">
+            
+            <!-- App Title -->
+            <Label text="Inventory Manager" styleClass="top-bar-title"/>
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Notification Icon -->
+            <StackPane fx:id="notificationPane" styleClass="notification-icon">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/assets/bell_icon.png"/>
+                    </image>
+                </ImageView>
+                <Circle fx:id="notificationDot" radius="5" fill="red" translateX="10" translateY="-10" visible="true"/>
+            </StackPane>
+
+            <!-- Account Menu -->
+            <MenuButton fx:id="accountMenuButton" text="Account" styleClass="account-menu">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true">
+                        <image>
+                            <Image url="@/assets/user_icon.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem fx:id="logoutMenuItem" text="Logout"/>
+                </items>
+            </MenuButton>
+        </HBox>
+    </top>
+
+
+
+
+    <!-- Main content -->
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <!-- Header -->
+                    <VBox spacing="5">
+                        <Label text="Inventory Manager Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                        <Label text="Stock levels and inventory management" style="-fx-text-fill: #666;"/>
+                    </VBox>
+
+                    <!-- Summary Cards -->
+                    <HBox spacing="15">
+                        <VBox fx:id="totalItemsCard" spacing="5" style="-fx-border-color: #ccc; -fx-padding: 15; -fx-background-color: #3498db; -fx-background-radius: 8;">
+                            <Label text="Total Items" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label fx:id="totalItemsLabel" text="0" style="-fx-font-size: 20px; -fx-text-fill: white;"/>
+                            <Label text="Across all categories" style="-fx-text-fill: white; -fx-font-size: 11px;"/>
+                        </VBox>
+
+                        <VBox fx:id="okStockCard" spacing="5" style="-fx-border-color: #ccc; -fx-padding: 15; -fx-background-color: #2ecc71; -fx-background-radius: 8;">
+                            <Label text="Adequate Stock" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label fx:id="okStockLabel" text="0" style="-fx-font-size: 20px; -fx-text-fill: white;"/>
+                            <Label text="Above minimum threshold" style="-fx-text-fill: white; -fx-font-size: 11px;"/>
+                        </VBox>
+
+                        <VBox fx:id="lowStockCard" spacing="5" style="-fx-border-color: #ccc; -fx-padding: 15; -fx-background-color: #e67e22; -fx-background-radius: 8;">
+                            <Label text="Low Stock" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label fx:id="lowStockLabel" text="0" style="-fx-font-size: 20px; -fx-text-fill: white;"/>
+                            <Label text="Needs reordering soon" style="-fx-text-fill: white; -fx-font-size: 11px;"/>
+                        </VBox>
+
+                        <VBox fx:id="criticalStockCard" spacing="5" style="-fx-border-color: #ccc; -fx-padding: 15; -fx-background-color: #e74c3c; -fx-background-radius: 8;">
+                            <Label text="Critical Stock" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label fx:id="criticalStockLabel" text="0" style="-fx-font-size: 20px; -fx-text-fill: white;"/>
+                            <Label text="Immediate action required" style="-fx-text-fill: white; -fx-font-size: 11px;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Quick Actions -->
+                    <VBox spacing="10">
+                        <Label text="Quick Actions" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Button fx:id="btnManageInventory" text="Manage Inventory" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="200"/>
+                    </VBox>
+
+                    <!-- Inventory Table -->
+                    <VBox spacing="10">
+                        <Label text="Stock Overview" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <TableView fx:id="inventoryTable" prefHeight="400" style="-fx-font-size: 14px; -fx-table-cell-border-color: #bdc3c7;">
+                            <columns>
+                                <TableColumn fx:id="colName" text="Item Name" prefWidth="150"/>
+                                <TableColumn fx:id="colCategory" text="Category" prefWidth="100"/>
+                                <TableColumn fx:id="colQuantity" text="Quantity" prefWidth="100"/>
+                                <TableColumn fx:id="colMinStock" text="Min Stock" prefWidth="100"/>
+                                <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+
+                    <!-- Alerts Section -->
+                    <VBox spacing="10" fx:id="alertsSection">
+                        <Label text="Stock Alerts" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <VBox fx:id="alertsContainer" spacing="5"/>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

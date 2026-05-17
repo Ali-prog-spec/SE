@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectManager.AssignWorkersController"
+            style="-fx-background-color:#f5f6fa;">
+
+    <!-- Top header with back button and title -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10; -fx-background-color:#34495E;">
+            <Button text="Back" fx:id="btnBack" onAction="#goBack"
+                    style="-fx-background-color:#FF8800; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:5 15 5 15;"/>
+            <Label text="Assign Tasks to Workers" style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+        </HBox>
+    </top>
+
+    <!-- Center content -->
+    <center>
+        <VBox spacing="15" style="-fx-padding:20;" prefHeight="500">
+            <!-- Project selection -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Select Project:"/>
+                <ComboBox fx:id="cmbProjects" prefWidth="300"/>
+            </HBox>
+
+            <!-- Scrollable team member list -->
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color:transparent;">
+                <VBox fx:id="vboxTeamMembers" spacing="10" style="-fx-padding:10;"/>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>
