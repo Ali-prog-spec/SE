@@ -1,6 +1,5 @@
 package controllers.ProjectManager;
 import model.ProcurementOfficer.*;
-
 import model.ProjectManager.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -203,7 +202,6 @@ public class RequestMaterialController {
             String msg = "You have a Request to Accept or Reject for user : " + App.getCurrentUser().getUsername() + 
             "and Project ID : " + selectedProject.getId();
             ProNotificationDAO.sendNotificationToUser(selectedManager.getId(), msg);
-
 
         showAlert(Alert.AlertType.INFORMATION, "Material request sent successfully!");
 

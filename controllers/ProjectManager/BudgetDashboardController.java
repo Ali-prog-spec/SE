@@ -33,7 +33,6 @@ import java.util.HashMap;
 
 
 public class BudgetDashboardController {
-
     @FXML private TableView<BudgetItem> budgetTable;
 
     @FXML private TableColumn<BudgetItem, String> colProject;
@@ -42,7 +41,6 @@ public class BudgetDashboardController {
     @FXML private TableColumn<BudgetItem, Double> colRemaining;
     @FXML private TableColumn<BudgetItem, Double> colUtilization;
     @FXML private TableColumn<BudgetItem, Void> colEdit;
-
     @FXML private Button btnSaveChanges;
     @FXML private Button btnEditBudget;
 
@@ -217,7 +215,6 @@ public class BudgetDashboardController {
         e.printStackTrace();
     }
 }
-
  @FXML
     private void goBack() {
         try {
